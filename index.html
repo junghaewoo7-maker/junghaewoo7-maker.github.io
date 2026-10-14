@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="배우고 성장하는 것을 좋아하는 junghaewoo7의 개인 페이지">
+  <title>junghaewoo7 | 성장 기록</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 상단 내비게이션 -->
+  <nav class="topbar">
+    <a href="#home" class="logo">jhw<span>.</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">소개</a>
+      <a href="#learning">학습 중</a>
+      <a href="#certs">자격증</a>
+      <a href="#habits">습관</a>
+      <a href="#contact">연락</a>
+    </div>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeToggle" aria-label="테마 전환">🌙</button>
+      <button class="icon-btn menu-btn" id="menuToggle" aria-label="메뉴 열기">☰</button>
+    </div>
+  </nav>
+
+  <!-- 히어로 -->
+  <header class="hero" id="home">
+    <p class="eyebrow">Keep Growing, Every Day</p>
+    <h1>안녕하세요,<br><span class="accent">매일 조금씩 성장하는</span> 사람입니다.</h1>
+    <p class="typing-line"><span id="typing"></span><span class="cursor">|</span></p>
+    <div class="hero-buttons">
+      <a href="#learning" class="btn primary">지금 배우는 것</a>
+      <a href="#certs" class="btn ghost">자격증 도전기</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- 소개 -->
+    <section id="about" class="reveal">
+      <h2 class="section-title"><span>01</span> 소개</h2>
+      <div class="about-grid">
+        <p class="lead">
+          저는 <strong>자기계발</strong>을 좋아합니다. 새로운 것을 배우고, 어제보다 나은 오늘을 만드는 과정에서 가장 큰 즐거움을 느낍니다.
+          현재 <strong>한국폴리텍대학 AX(AI 전환) 과정</strong>을 수강하며 AI를 실무에 활용하는 방법을 익히고 있고,
+          그와 별도로 <strong>자격증 취득</strong>을 위해 꾸준히 공부하고 있습니다.
+        </p>
+        <ul class="values">
+          <li><span class="v-icon">📚</span><div><b>꾸준함</b><p>작은 습관이 큰 변화를 만든다고 믿습니다.</p></div></li>
+          <li><span class="v-icon">🤖</span><div><b>AI 활용</b><p>AI를 도구로 일하는 방식을 바꿔 갑니다.</p></div></li>
+          <li><span class="v-icon">🎯</span><div><b>목표 지향</b><p>목표를 세우고, 기록하고, 달성합니다.</p></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 학습 중 -->
+    <section id="learning" class="reveal">
+      <h2 class="section-title"><span>02</span> 지금 배우는 것</h2>
+      <div class="course-card">
+        <div class="course-head">
+          <span class="badge">수강 중</span>
+          <h3>한국폴리텍대학 · AX 과정</h3>
+          <p>AI Transformation — AI 기술을 이해하고 업무와 일상에 적용하는 실무 중심 과정</p>
+        </div>
+        <div class="topics">
+          <span>HTML · CSS · JavaScript</span>
+          <span>생성형 AI 활용</span>
+          <span>프롬프트 엔지니어링</span>
+          <span>업무 자동화</span>
+          <span>데이터 다루기</span>
+        </div>
+        <div class="progress-block">
+          <div class="progress-label">
+            <span>과정 진행률</span>
+            <span id="courseValue">0%</span>
+          </div>
+          <div class="progress"><div class="progress-fill" id="courseFill"></div></div>
+          <p class="course-stats">
+            <span id="courseDay"></span>
+            <span id="courseHours"></span>
+          </p>
+          <small class="hint">총 2개월 · 240시간 과정 (하루 8시간, 평일 기준으로 자동 계산)</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- 자격증 -->
+    <section id="certs" class="reveal">
+      <h2 class="section-title"><span>03</span> 자격증 도전기</h2>
+      <p class="section-desc">준비 중인 자격증과 시험일을 추가하면 D-day와 준비도를 관리할 수 있어요.</p>
+
+      <form id="certForm" class="cert-form">
+        <input type="text" id="certName" placeholder="자격증 이름 (예: 정보처리기사)" required>
+        <input type="date" id="certDate" required aria-label="시험일">
+        <button type="submit" class="btn primary">추가</button>
+      </form>
+
+      <div class="cert-list" id="certList"></div>
+      <p class="empty" id="certEmpty">아직 등록된 자격증이 없습니다. 첫 목표를 추가해 보세요! ✍️</p>
+    </section>
+
+    <!-- 습관 -->
+    <section id="habits" class="reveal">
+      <h2 class="section-title"><span>04</span> 이번 주 공부 습관</h2>
+      <p class="section-desc">공부한 날을 체크하세요. 매주 월요일에 새로 시작됩니다.</p>
+      <div class="week" id="week"></div>
+      <p class="streak" id="streakText"></p>
+    </section>
+
+    <!-- 오늘의 한 마디 -->
+    <section class="quote-box reveal">
+      <p id="quote"></p>
+      <button class="btn ghost small" id="newQuote">다른 문장 보기 ↻</button>
+    </section>
+
+    <!-- 연락 -->
+    <section id="contact" class="reveal">
+      <h2 class="section-title"><span>05</span> 연락하기</h2>
+      <p class="section-desc">함께 공부하거나 이야기 나누고 싶다면 언제든 연락 주세요.</p>
+      <div class="contact-links">
+        <a href="https://github.com/junghaewoo7" target="_blank" rel="noopener" class="contact-card">
+          <span>💻</span> GitHub
+        </a>
+        <a href="mailto:your-email@example.com" class="contact-card">
+          <span>✉️</span> Email
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> junghaewoo7 · 오늘도 한 걸음.</p>
+  </footer>
+
+  <button id="toTop" class="to-top" aria-label="맨 위로">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
